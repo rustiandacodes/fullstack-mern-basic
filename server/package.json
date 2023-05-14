@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon S1erver.js"
   },
   "name": "server",
   "version": "1.0.0",
