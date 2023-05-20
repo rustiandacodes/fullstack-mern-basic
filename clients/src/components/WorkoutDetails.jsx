@@ -1,6 +1,7 @@
 import React from 'react';
 import { Trash2 } from 'feather-icons-react';
 import { useWorkoutsContext } from '../hooks/useWorkoutsContext';
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 
 const WorkoutDetails = ({ workout }) => {
   const { dispatch } = useWorkoutsContext();
@@ -30,7 +31,7 @@ const WorkoutDetails = ({ workout }) => {
           Reps : <strong>{workout.reps}</strong>
         </strong>
       </p>
-      <p>{workout.createdAt}</p>
+      <p>{formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}</p>
       <span onClick={handleClick}>
         <Trash2 size={20} />
       </span>
