@@ -11,7 +11,11 @@ const Home = () => {
 
   useEffect(() => {
     const fetchWorkout = async () => {
-      const response = await fetch('api/workouts');
+      const response = await fetch('/api/workouts', {
+        headers: {
+          Authorization: `Bearer ${user.token}`,
+        },
+      });
       const json = await response.json();
 
       if (response.ok) {
@@ -21,7 +25,7 @@ const Home = () => {
     if (user) {
       fetchWorkout();
     }
-  }, [dispatch, user ]);
+  }, [dispatch, user]);
 
   return (
     <div className="home">
